@@ -1,0 +1,136 @@
+# Collects past-week Hacker News and Reddit posts about agent skills
+# into signals/, for the weekly Agent Skills Radar report to read.
+# Runs every Saturday at 06:00 IST (00:30 UTC), before the 09:00 IST report.
+name: Fetch weekly signals
+
+on:
+  schedule:
+    - cron: "30 0 * * 6"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [fetch-signals]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Fetch Hacker News and Reddit
+        run: |
+          python3 - <<'PY'
+          import json, time, datetime, pathlib, urllib.request, urllib.parse
+          import xml.etree.ElementTree as ET
+
+          UA = "agent-skills-radar/1.0 (weekly research digest; github.com/Kumar-Ashwin-Hubert/agent-skills-radar)"
+          now = datetime.datetime.now(datetime.timezone.utc)
+          since = now - datetime.timedelta(days=7)
+          status = {}
+
+          def get(url, accept="application/json"):
+              req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": accept})
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  return r.read()
+
+          KEYWORDS = ["skill.md", "agent skill", "claude skill", "skills.sh", "clawhub",
+                      "claude code skill", "codex skill", "copilot skill", "cursor skill", "gemini cli skill"]
+          def relevant(text):
+              t = (text or "").lower()
+              return any(k in t for k in KEYWORDS) or ("skill" in t and any(a in t for a in
+                     ["claude", "codex", "copilot", "cursor", "gemini", "agent"]))
+
+          # Hacker News (Algolia API)
+          hn = {}
+          for q in ["SKILL.md", "agent skills", "claude skills", "claude code skill", "agent skill"]:
+              url = ("https://hn.algolia.com/api/v1/search_by_date?" + urllib.parse.urlencode({
+                  "query": q, "tags": "story", "hitsPerPage": 100,
+                  "numericFilters": f"created_at_i>{int(since.timestamp())}"}))
+              try:
+                  for h in json.loads(get(url))["hits"]:
+                      if not relevant(h.get("title", "") + " " + (h.get("url") or "")):
+                          continue
+                      hn[h["objectID"]] = {
+                          "title": h.get("title"), "url": h.get("url"),
+                          "hn_url": f"https://news.ycombinator.com/item?id={h['objectID']}",
+                          "points": h.get("points"), "comments": h.get("num_comments"),
+                          "created_at": h.get("created_at")}
+                  status[f"hn:{q}"] = "ok"
+              except Exception as e:
+                  status[f"hn:{q}"] = f"failed: {e}"
+              time.sleep(1)
+
+          # Reddit: JSON search first, RSS as fallback
+          subs = ["ClaudeAI", "ClaudeCode", "cursor", "ChatGPTCoding", "GithubCopilot", "LocalLLaMA"]
+          reddit = []
+          for s in subs:
+              q = urllib.parse.urlencode({"q": "skill OR skills OR SKILL.md", "restrict_sr": 1,
+                                          "sort": "top", "t": "week", "limit": 50})
+              got = False
+              for host in ["https://www.reddit.com", "https://old.reddit.com"]:
+                  try:
+                      d = json.loads(get(f"{host}/r/{s}/search.json?{q}"))
+                      for c in d["data"]["children"]:
+                          p = c["data"]
+                          if not relevant(p.get("title", "") + " " + p.get("selftext", "")[:2000]):
+                              continue
+                          reddit.append({"subreddit": s, "title": p.get("title"),
+                              "url": "https://www.reddit.com" + p.get("permalink", ""),
+                              "link": p.get("url"), "score": p.get("score"),
+                              "comments": p.get("num_comments"),
+                              "created_at": datetime.datetime.fromtimestamp(p.get("created_utc", 0), datetime.timezone.utc).isoformat()})
+                      status[f"reddit:{s}"] = f"ok ({host}, json)"
+                      got = True
+                      break
+                  except Exception as e:
+                      status[f"reddit:{s}"] = f"json failed: {e}"
+                  time.sleep(2)
+              if not got:
+                  try:
+                      x = ET.fromstring(get(f"https://www.reddit.com/r/{s}/search.rss?{q}", "application/atom+xml"))
+                      ns = {"a": "http://www.w3.org/2005/Atom"}
+                      for e in x.findall("a:entry", ns):
+                          title = e.findtext("a:title", "", ns)
+                          if not relevant(title):
+                              continue
+                          link = e.find("a:link", ns)
+                          reddit.append({"subreddit": s, "title": title,
+                              "url": link.get("href") if link is not None else None,
+                              "score": None, "comments": None,
+                              "created_at": e.findtext("a:updated", None, ns)})
+                      status[f"reddit:{s}"] = "ok (rss fallback, no scores)"
+                  except Exception as e:
+                      status[f"reddit:{s}"] += f"; rss failed: {e}"
+              time.sleep(2)
+
+          out = {"schema_version": 1, "collected_at": now.isoformat(),
+                 "window": {"start": since.date().isoformat(), "end": now.date().isoformat()},
+                 "status": status,
+                 "hacker_news": sorted(hn.values(), key=lambda h: -(h["points"] or 0)),
+                 "reddit": sorted(reddit, key=lambda r: -(r["score"] or 0))}
+          pathlib.Path("signals").mkdir(exist_ok=True)
+          body = json.dumps(out, ensure_ascii=False, indent=1)
+          pathlib.Path(f"signals/{now.date().isoformat()}.json").write_text(body, encoding="utf-8")
+          pathlib.Path("signals/latest.json").write_text(body, encoding="utf-8")
+          print(json.dumps(status, indent=1))
+          print(f"HN: {len(hn)}  Reddit: {len(reddit)}")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add signals
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Signals: week ending $(date -u +%F)"
+          git pull --rebase origin main
+          git push origin HEAD:main
