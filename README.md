@@ -1,6 +1,6 @@
 # Agent Skills Radar
 
-A weekly, evidence-based ranking of trending agent skills (SKILL.md packages for Claude Code, GitHub Copilot, Codex, Cursor, Gemini CLI and similar agents). It tracks GitHub, skill registries, Hacker News and YouTube, and adds trust flags to each skill.
+A weekly, evidence-based ranking of trending agent skills (SKILL.md packages for Claude Code, GitHub Copilot, Codex, Cursor, Gemini CLI and similar agents). It tracks GitHub, skill registries, Hacker News and YouTube, and flags any publicly reported security concerns.
 
 ## Latest report: week ending 12 November 2026
 
@@ -48,7 +48,7 @@ Skills are assigned to one of 12 fixed sections:
 - Agent-Building & Meta-Skills
 - Business & Marketing
 
-Each skill also carries trust flags: licence, any published security audit or warnings, and whether it comes from a known vendor or maintainer.
+A short "Watch out" section lists any skill with a publicly reported security, prompt-injection or licensing concern.
 
 ## Archive
 
