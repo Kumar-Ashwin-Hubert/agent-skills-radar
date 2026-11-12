@@ -1,0 +1,15 @@
+title: Agent Skills Radar
+description: A weekly, evidence-based ranking of trending agent skills (SKILL.md packages)
+theme: jekyll-theme-cayman
+url: https://kumar-ashwin-hubert.github.io
+baseurl: /agent-skills-radar
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false
+exclude:
+  - .github

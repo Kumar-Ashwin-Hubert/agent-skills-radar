@@ -2,6 +2,8 @@
 
 A weekly, evidence-based ranking of trending agent skills (SKILL.md packages for Claude Code, GitHub Copilot, Codex, Cursor, Gemini CLI and similar agents). It tracks GitHub, skill registries, Hacker News and YouTube, and flags any publicly reported security concerns.
 
+**Website:** https://kumar-ashwin-hubert.github.io/agent-skills-radar/ · **RSS:** [feed.xml](feed.xml)
+
 ## Latest report: week ending 12 November 2026
 
 **[Read the full report →](reports/2026-11-12.md)**
@@ -49,6 +51,10 @@ Skills are assigned to one of 12 fixed sections:
 - Business & Marketing
 
 A short "Watch out" section lists any skill with a publicly reported security, prompt-injection or licensing concern.
+
+## Data
+
+Each week's figures are saved as JSON in [`data/`](data/) (one file per week: rank, section, stars, 7-day growth, trending installs and signals per skill). Reddit and Hacker News mentions are collected separately into [`signals/`](signals/) each Saturday before the report runs.
 
 ## Archive
 

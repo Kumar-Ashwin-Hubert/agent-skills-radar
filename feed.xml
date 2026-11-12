@@ -1,0 +1,21 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <description>{{ site.description | xml_escape }}</description>
+    {% assign reports = site.pages | where_exp: "p", "p.path contains 'reports/'" | sort: "path" | reverse %}
+    {% for p in reports limit: 20 %}
+    {% assign d = p.name | remove: ".md" %}
+    <item>
+      <title>Trending Agent Skills: week ending {{ d }}</title>
+      <link>{{ site.url }}{{ site.baseurl }}/reports/{{ d }}.html</link>
+      <guid>{{ site.url }}{{ site.baseurl }}/reports/{{ d }}.html</guid>
+      <pubDate>{{ d | date_to_rfc822 }}</pubDate>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
