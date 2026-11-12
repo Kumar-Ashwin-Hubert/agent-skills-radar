@@ -1,6 +1,6 @@
 # Publishes the weekly Agent Skills Radar report to this repo.
 # Triggered by the weekly automation with a repository_dispatch event
-# (event type "publish-report") carrying the Markdown files in client_payload.
+# (event type "publish-report") carrying the files in client_payload.
 name: Publish weekly report
 
 on:
@@ -11,7 +11,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: publish-report
+  group: repo-write
   cancel-in-progress: false
 
 jobs:
@@ -23,28 +23,29 @@ jobs:
         with:
           ref: main
 
-      - name: Write report files from the payload
+      - name: Write files from the payload
         env:
           PAYLOAD: ${{ toJson(github.event.client_payload) }}
         run: |
           python3 - <<'PY'
           import base64, json, os, pathlib, re
-
           payload = json.loads(os.environ["PAYLOAD"])
           files = payload.get("files") or []
           if not files:
               raise SystemExit("No files in payload")
-
           # Only these paths may be written by the automation.
-          allowed = re.compile(r"^(README\.md|reports/\d{4}-\d{2}-\d{2}\.md)$")
+          allowed = re.compile(
+              r"^(README\.md|_config\.yml|feed\.xml"
+              r"|reports/\d{4}-\d{2}-\d{2}\.md"
+              r"|data/\d{4}-\d{2}-\d{2}\.json)$"
+          )
           for f in files:
               path = f["path"]
               if not allowed.match(path):
                   raise SystemExit(f"Refusing to write path: {path}")
-              if "content_b64" in f:
-                  data = base64.b64decode(f["content_b64"])
-              else:
-                  data = f["content"].encode("utf-8")
+              data = base64.b64decode(f["content_b64"]) if "content_b64" in f else f["content"].encode("utf-8")
+              if path.endswith(".json"):
+                  json.loads(data)  # must be valid JSON
               p = pathlib.Path(path)
               p.parent.mkdir(parents=True, exist_ok=True)
               p.write_bytes(data)
@@ -57,10 +58,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md reports
+          git add -A -- README.md _config.yml feed.xml reports data
           if git diff --cached --quiet; then
             echo "Nothing changed; no commit made."
             exit 0
           fi
           git commit -m "${COMMIT_MSG:-Weekly report update}"
+          git pull --rebase origin main
           git push origin HEAD:main
