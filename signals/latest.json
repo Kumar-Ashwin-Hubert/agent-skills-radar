@@ -1,9 +1,9 @@
 {
  "schema_version": 1,
- "collected_at": "2026-11-12T22:22:53.385206+00:00",
+ "collected_at": "2026-11-14T06:51:08.892396+00:00",
  "window": {
-  "start": "2026-11-05",
-  "end": "2026-11-12"
+  "start": "2026-11-07",
+  "end": "2026-11-14"
  },
  "status": {
   "hn:SKILL.md": "ok",
@@ -23,15 +23,15 @@
    "title": "Socratic Tutor",
    "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md",
    "hn_url": "https://news.ycombinator.com/item?id=50438261",
-   "points": 642,
-   "comments": 148,
+   "points": 700,
+   "comments": 165,
    "created_at": "2026-11-10T10:18:22Z"
   },
   {
    "title": "Ask HN: How do you evaluate the skills your AI agents use?",
    "url": null,
    "hn_url": "https://news.ycombinator.com/item?id=50426070",
-   "points": 23,
+   "points": 25,
    "comments": 6,
    "created_at": "2026-11-09T14:24:22Z"
   },
@@ -52,20 +52,20 @@
    "created_at": "2026-11-09T18:08:34Z"
   },
   {
-   "title": "Less Is More UI Agent Skill",
-   "url": "https://github.com/Mendiak/less-is-more-ui",
-   "hn_url": "https://news.ycombinator.com/item?id=50397450",
-   "points": 3,
+   "title": "Show HN: Back endskills – agent skills for safer auth, data and migration code",
+   "url": "https://github.com/globalmpc/backendskills",
+   "hn_url": "https://news.ycombinator.com/item?id=50493538",
+   "points": 2,
    "comments": 0,
-   "created_at": "2026-11-06T19:50:36Z"
+   "created_at": "2026-11-14T03:32:05Z"
   },
   {
-   "title": "Anatomy, a skill for Claude that draws any concept as a working 3D machine",
-   "url": "https://skills.wheresryan.sh/anatomy",
-   "hn_url": "https://news.ycombinator.com/item?id=50392708",
-   "points": 3,
+   "title": "Skills that stop AI coding agents from touching production",
+   "url": "https://github.com/simbaTmotsi/simba-skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50490160",
+   "points": 2,
    "comments": 0,
-   "created_at": "2026-11-06T14:29:20Z"
+   "created_at": "2026-11-13T21:37:07Z"
   },
   {
    "title": "Show HN: Receipts, agent skills that make PRDs and metrics cite their evidence",
@@ -108,12 +108,20 @@
    "created_at": "2026-11-09T06:55:24Z"
   },
   {
-   "title": "Skill to teach your agents how to use Jujutsu VCS",
-   "url": "https://github.com/danverbraganza/jujutsu-skill",
-   "hn_url": "https://news.ycombinator.com/item?id=50386914",
-   "points": 2,
+   "title": "Never Twice dont let the AI agent do mistake again",
+   "url": "https://clawhub.ai/cognicore-dev/skills/never-twice",
+   "hn_url": "https://news.ycombinator.com/item?id=50483151",
+   "points": 1,
    "comments": 0,
-   "created_at": "2026-11-06T01:12:03Z"
+   "created_at": "2026-11-13T13:23:39Z"
+  },
+  {
+   "title": "Agent Skills",
+   "url": "https://vercel.com/docs/agent-resources/skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50478512",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-13T04:54:17Z"
   },
   {
    "title": "Agent skills for building smart glasses apps",
@@ -186,22 +194,6 @@
    "points": 1,
    "comments": 1,
    "created_at": "2026-11-07T07:34:15Z"
-  },
-  {
-   "title": "An agent skill and a script for Claude Code to send Mattermost DMs as you",
-   "url": "https://github.com/abdallah/mattermost-dm",
-   "hn_url": "https://news.ycombinator.com/item?id=50396719",
-   "points": 1,
-   "comments": 0,
-   "created_at": "2026-11-06T18:57:53Z"
-  },
-  {
-   "title": "Axiom – blocks AI agents from inventing limits your code never defined",
-   "url": "https://github.com/axiom-csc/axiom-skill",
-   "hn_url": "https://news.ycombinator.com/item?id=50386839",
-   "points": 1,
-   "comments": 0,
-   "created_at": "2026-11-06T01:00:43Z"
   },
   {
    "title": "Show HN: Memsaga – Git versioning of Claude Code memory and skills, by session",

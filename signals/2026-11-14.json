@@ -1,0 +1,208 @@
+{
+ "schema_version": 1,
+ "collected_at": "2026-11-14T06:51:08.892396+00:00",
+ "window": {
+  "start": "2026-11-07",
+  "end": "2026-11-14"
+ },
+ "status": {
+  "hn:SKILL.md": "ok",
+  "hn:agent skills": "ok",
+  "hn:claude skills": "ok",
+  "hn:claude code skill": "ok",
+  "hn:agent skill": "ok",
+  "reddit:ClaudeAI": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 403: Forbidden",
+  "reddit:ClaudeCode": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:cursor": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:ChatGPTCoding": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:GithubCopilot": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:LocalLLaMA": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests"
+ },
+ "hacker_news": [
+  {
+   "title": "Socratic Tutor",
+   "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md",
+   "hn_url": "https://news.ycombinator.com/item?id=50438261",
+   "points": 700,
+   "comments": 165,
+   "created_at": "2026-11-10T10:18:22Z"
+  },
+  {
+   "title": "Ask HN: How do you evaluate the skills your AI agents use?",
+   "url": null,
+   "hn_url": "https://news.ycombinator.com/item?id=50426070",
+   "points": 25,
+   "comments": 6,
+   "created_at": "2026-11-09T14:24:22Z"
+  },
+  {
+   "title": "I Just Deleted All My Agent Skills",
+   "url": "https://philippdubach.com/posts/i-just-deleted-all-my-agent-skills/",
+   "hn_url": "https://news.ycombinator.com/item?id=50413912",
+   "points": 8,
+   "comments": 0,
+   "created_at": "2026-11-08T15:04:51Z"
+  },
+  {
+   "title": "Agent Skills from Jane Street",
+   "url": "https://github.com/janestreet/agent_skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50429183",
+   "points": 4,
+   "comments": 0,
+   "created_at": "2026-11-09T18:08:34Z"
+  },
+  {
+   "title": "Show HN: Back endskills – agent skills for safer auth, data and migration code",
+   "url": "https://github.com/globalmpc/backendskills",
+   "hn_url": "https://news.ycombinator.com/item?id=50493538",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-14T03:32:05Z"
+  },
+  {
+   "title": "Skills that stop AI coding agents from touching production",
+   "url": "https://github.com/simbaTmotsi/simba-skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50490160",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-13T21:37:07Z"
+  },
+  {
+   "title": "Show HN: Receipts, agent skills that make PRDs and metrics cite their evidence",
+   "url": "https://github.com/aliraza2025/receipts",
+   "hn_url": "https://news.ycombinator.com/item?id=50461995",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-12T01:51:05Z"
+  },
+  {
+   "title": "A Writing Skill for Agents",
+   "url": "https://github.com/JangHyun-bin/human-readable-writing",
+   "hn_url": "https://news.ycombinator.com/item?id=50452180",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-11T11:32:29Z"
+  },
+  {
+   "title": "Socratic-tutor – turns an LLM into a strict personal tutor",
+   "url": "https://github.com/janestreet/agent_skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50436087",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-10T04:31:59Z"
+  },
+  {
+   "title": "An agent skill for $80 (not derogatory, it's a good skill)",
+   "url": "https://sefirot.it/edito-deck/ai",
+   "hn_url": "https://news.ycombinator.com/item?id=50425210",
+   "points": 2,
+   "comments": 3,
+   "created_at": "2026-11-09T13:19:18Z"
+  },
+  {
+   "title": "My AI agent archived 53 of its own skills during a maintenance run",
+   "url": "https://www.dhawalshah.net/article/ai-agent-governance/",
+   "hn_url": "https://news.ycombinator.com/item?id=50421997",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-09T06:55:24Z"
+  },
+  {
+   "title": "Never Twice dont let the AI agent do mistake again",
+   "url": "https://clawhub.ai/cognicore-dev/skills/never-twice",
+   "hn_url": "https://news.ycombinator.com/item?id=50483151",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-13T13:23:39Z"
+  },
+  {
+   "title": "Agent Skills",
+   "url": "https://vercel.com/docs/agent-resources/skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50478512",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-13T04:54:17Z"
+  },
+  {
+   "title": "Agent skills for building smart glasses apps",
+   "url": "https://github.com/hinty-eu/smart-glasses-skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50474233",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-12T21:02:33Z"
+  },
+  {
+   "title": "Show HN: Agent skill and Claude/Codex plugins for Google Ads campaigns",
+   "url": "https://github.com/adeptads/agent-skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50460287",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-11T23:11:38Z"
+  },
+  {
+   "title": "SkillOpt: Self-Evolving Agent Skills with Zero Inference Overhead",
+   "url": "https://github.com/microsoft/skillopt",
+   "hn_url": "https://news.ycombinator.com/item?id=50459527",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-11T22:20:08Z"
+  },
+  {
+   "title": "Skills for Your Agents",
+   "url": "https://medium.com/klaviyo-engineering/skills-for-your-agents-5b143936b880",
+   "hn_url": "https://news.ycombinator.com/item?id=50455221",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-11T16:25:06Z"
+  },
+  {
+   "title": "WikiSkill: Compiling Agent Experience into Knowledge for Skill Evolution",
+   "url": "https://arxiv.org/abs/2608.27454",
+   "hn_url": "https://news.ycombinator.com/item?id=50441125",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-10T14:45:27Z"
+  },
+  {
+   "title": "Show HN: Divorce – an agent skill for native HTML, verified with Nu and axe",
+   "url": "https://github.com/ElRaxy/divorce",
+   "hn_url": "https://news.ycombinator.com/item?id=50428173",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-09T16:54:03Z"
+  },
+  {
+   "title": "Ask HN: Specialized Agents vs. General Agents with Skills",
+   "url": null,
+   "hn_url": "https://news.ycombinator.com/item?id=50411881",
+   "points": 1,
+   "comments": 1,
+   "created_at": "2026-11-08T10:07:24Z"
+  },
+  {
+   "title": "Elephant-Goldfish Model (Agent Skill)",
+   "url": "https://github.com/google/elephant-goldfish-model",
+   "hn_url": "https://news.ycombinator.com/item?id=50410270",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-08T03:50:34Z"
+  },
+  {
+   "title": "Show HN: Coding agent skills, tested on 15 backend tasks with hidden checks",
+   "url": "https://github.com/globalmpc/backendskills",
+   "hn_url": "https://news.ycombinator.com/item?id=50402468",
+   "points": 1,
+   "comments": 1,
+   "created_at": "2026-11-07T07:34:15Z"
+  },
+  {
+   "title": "Show HN: Memsaga – Git versioning of Claude Code memory and skills, by session",
+   "url": "https://github.com/grimmerk/memsaga",
+   "hn_url": "https://news.ycombinator.com/item?id=50442251",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-10T16:03:32Z"
+  }
+ ],
+ "reddit": []
+}
