@@ -1,0 +1,200 @@
+{
+ "schema_version": 1,
+ "collected_at": "2026-11-28T08:15:34.214690+00:00",
+ "window": {
+  "start": "2026-11-21",
+  "end": "2026-11-28"
+ },
+ "status": {
+  "hn:SKILL.md": "ok",
+  "hn:agent skills": "ok",
+  "hn:claude skills": "ok",
+  "hn:claude code skill": "ok",
+  "hn:agent skill": "ok",
+  "reddit:ClaudeAI": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 404: Not Found",
+  "reddit:ClaudeCode": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:cursor": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:ChatGPTCoding": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 404: Not Found",
+  "reddit:GithubCopilot": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests",
+  "reddit:LocalLLaMA": "json failed: HTTP Error 403: Blocked; rss failed: HTTP Error 429: Too Many Requests"
+ },
+ "hacker_news": [
+  {
+   "title": "Show HN: An agent skill that optimizes code with falsifiable hypotheses",
+   "url": "https://chszlab.github.io/AgenticAlgorithmEngineering/",
+   "hn_url": "https://news.ycombinator.com/item?id=50611593",
+   "points": 136,
+   "comments": 13,
+   "created_at": "2026-11-23T14:02:15Z"
+  },
+  {
+   "title": "Claude Code Skills Now Sharable Across Teams",
+   "url": "https://emergent.sh/news/claude-code-skills-now-sharable-across-teams",
+   "hn_url": "https://news.ycombinator.com/item?id=50670184",
+   "points": 10,
+   "comments": 3,
+   "created_at": "2026-11-27T18:36:20Z"
+  },
+  {
+   "title": "Claude Code Mode Internals",
+   "url": "https://muthuishere.medium.com/code-mode-internals-and-adapting-them-for-your-clis-and-agent-skills-3a9ae4c9782f",
+   "hn_url": "https://news.ycombinator.com/item?id=50610977",
+   "points": 9,
+   "comments": 1,
+   "created_at": "2026-11-23T12:58:33Z"
+  },
+  {
+   "title": "Toolfence-scan – static checks for Cursor/Claude/Copilot skills",
+   "url": "https://github.com/StockGorilla/skill-scan",
+   "hn_url": "https://news.ycombinator.com/item?id=50622631",
+   "points": 9,
+   "comments": 0,
+   "created_at": "2026-11-24T02:07:18Z"
+  },
+  {
+   "title": "Show HN: ClawVet – Offline AST scanner and rug-pull diff for AI agent skills",
+   "url": "https://clawvet.vercel.app/",
+   "hn_url": "https://news.ycombinator.com/item?id=50587571",
+   "points": 8,
+   "comments": 1,
+   "created_at": "2026-11-21T09:40:06Z"
+  },
+  {
+   "title": "MCP servers can now ship skills, run tasks, and more with Claude",
+   "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "hn_url": "https://news.ycombinator.com/item?id=50656110",
+   "points": 5,
+   "comments": 0,
+   "created_at": "2026-11-26T15:08:12Z"
+  },
+  {
+   "title": "MCP servers can now ship skills, run tasks, and more with Claude",
+   "url": "https://claude.com/resources/articles/skills-over-mcp-tasks-and-more",
+   "hn_url": "https://news.ycombinator.com/item?id=50632503",
+   "points": 5,
+   "comments": 0,
+   "created_at": "2026-11-24T18:38:57Z"
+  },
+  {
+   "title": "My coding agent kept saying \"done\" on images it never looked at",
+   "url": "https://github.com/abdiraimov-otabek/claude-code-og-image-skill",
+   "hn_url": "https://news.ycombinator.com/item?id=50640365",
+   "points": 4,
+   "comments": 0,
+   "created_at": "2026-11-25T09:35:40Z"
+  },
+  {
+   "title": "Show HN: Competitive Intel analysis from 20-skill agent pipeline",
+   "url": "https://www.vybe.build/competitor-analysis",
+   "hn_url": "https://news.ycombinator.com/item?id=50632891",
+   "points": 3,
+   "comments": 0,
+   "created_at": "2026-11-24T19:04:23Z"
+  },
+  {
+   "title": "Show HN: Inbox Envoy, an open-source email triage skill for your own AI agent",
+   "url": "https://github.com/salespeak-ai/inbox-envoy",
+   "hn_url": "https://news.ycombinator.com/item?id=50605502",
+   "points": 3,
+   "comments": 0,
+   "created_at": "2026-11-23T00:00:35Z"
+  },
+  {
+   "title": "show-me: a coding agent skill for compact visual representations",
+   "url": "https://www.humanlayer.com/blog/show-me-skill",
+   "hn_url": "https://news.ycombinator.com/item?id=50671684",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-27T21:11:58Z"
+  },
+  {
+   "title": "Uber Evals 1M Agent Skill Invocations a Month",
+   "url": "https://www.uber.com/us/en/blog/optimizing-ubers-agent-skills/",
+   "hn_url": "https://news.ycombinator.com/item?id=50649769",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-26T00:32:59Z"
+  },
+  {
+   "title": "How Uber Evals 1 Million Agent Skill Invocations a Month",
+   "url": "https://www.uber.com/in/en/blog/optimizing-ubers-agent-skills/",
+   "hn_url": "https://news.ycombinator.com/item?id=50639162",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-25T06:24:36Z"
+  },
+  {
+   "title": "Uber Evals 1M Agent Skill Invocations a Month",
+   "url": "https://www.uber.com/us/en/blog/optimizing-ubers-agent-skills/",
+   "hn_url": "https://news.ycombinator.com/item?id=50626635",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-24T11:21:04Z"
+  },
+  {
+   "title": "How we made Claude Code skills sharable across teams?",
+   "url": "https://cleancommit.io/blog/claude-code-skills/",
+   "hn_url": "https://news.ycombinator.com/item?id=50668619",
+   "points": 2,
+   "comments": 0,
+   "created_at": "2026-11-27T16:24:39Z"
+  },
+  {
+   "title": "Show HN: Lockward – a lockfile for skills and MCP servers your AI agent loads",
+   "url": "https://github.com/Breaktroughf1/lockward",
+   "hn_url": "https://news.ycombinator.com/item?id=50656050",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-26T15:01:29Z"
+  },
+  {
+   "title": "Uber Evals 1M Agent Skill Invocations a Month",
+   "url": "https://twitter.com/UberEng/status/2125008806249930999",
+   "hn_url": "https://news.ycombinator.com/item?id=50652770",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-26T08:04:39Z"
+  },
+  {
+   "title": "Precisely.ai Catalog – AI Studio Catalog of App, Agent, Skill and Server",
+   "url": "https://precisely.ai/explore",
+   "hn_url": "https://news.ycombinator.com/item?id=50651693",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-26T05:09:51Z"
+  },
+  {
+   "title": "Show HN: A CLI and agent skill that writes film recipes to a Fujifilm X100VI",
+   "url": "https://github.com/volodymyrsmirnov/x100vi-skill",
+   "hn_url": "https://news.ycombinator.com/item?id=50626141",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-24T10:13:32Z"
+  },
+  {
+   "title": "Show HN: Built an ADHD Unblocker for Claude",
+   "url": "https://ryanpark.ai/claude-skills",
+   "hn_url": "https://news.ycombinator.com/item?id=50613327",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-23T15:22:15Z"
+  },
+  {
+   "title": "SaboTest: Skill for Detecting Claude Code Sabotage",
+   "url": "https://github.com/ibehnam/sabotest",
+   "hn_url": "https://news.ycombinator.com/item?id=50673610",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-28T01:48:39Z"
+  },
+  {
+   "title": "Claude Forward Deployed Engineer Path",
+   "url": "https://anthropic-partners.skilljar.com/path/claude-fde",
+   "hn_url": "https://news.ycombinator.com/item?id=50642385",
+   "points": 1,
+   "comments": 0,
+   "created_at": "2026-11-25T14:00:10Z"
+  }
+ ],
+ "reddit": []
+}
